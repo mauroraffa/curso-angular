@@ -1,0 +1,1507 @@
+$font-path: "./assets/fonts" !default;
+
+@mixin variable-icon-font($icon-code) {
+  content: #{"\"\\"}#{$icon-code + "\""};
+}
+
+@font-face {
+  font-family: "iconsFont";
+  src: url('#{$font-path}/iconsFont.eot'),
+       url('#{$font-path}/iconsFont.eot?#iefix') format('eot'),
+       url('#{$font-path}/iconsFont.woff') format('woff'),
+       url('#{$font-path}/iconsFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  > * :first-child {
+    display: block;
+  }
+
+  & .size-10 {
+    width: 10px;
+    height: 10px;
+    display: block;
+
+    &:before {
+      font-size: 10px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  & .size-12 {
+    width: 12px;
+    height: 12px;
+    display: block;
+
+    &:before {
+      font-size: 12px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  & .size-16 {
+    width: 16px;
+    height: 16px;
+    display: block;
+
+    &:before {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  & .size-24 {
+    width: 24px;
+    height: 24px;
+    display: block;
+
+    &:before {
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  & .size-32 {
+    width: 32px;
+    height: 32px;
+    display: block;
+
+    &:before {
+      font-size: 32px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  & .size-40 {
+    width: 40px;
+    height: 40px;
+    display: block;
+
+    &:before {
+      font-size: 40px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  & .size-48 {
+    width: 48px;
+    height: 48px;
+    display: block;
+
+    &:before {
+      font-size: 48px;
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  & .size-64 {
+    width: 64px;
+    height: 64px;
+    display: block;
+
+    &:before {
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+    }
+  }
+}
+
+%icon-base-styles {
+  font-family: "iconsFont";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: block;
+  text-decoration: inherit;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  /* opacity: .8; */
+  font-size: 16px;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+/*
+Glyphs list
+*/
+
+  .icon-mail {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA01);
+    }
+  }
+
+  .icon-add {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA02);
+    }
+  }
+
+  .icon-alert-circle-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA03);
+    }
+  }
+
+  .icon-alert-circle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA04);
+    }
+  }
+
+  .icon-alert-diamond-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA05);
+    }
+  }
+
+  .icon-alert-diamond {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA06);
+    }
+  }
+
+  .icon-alert-triangle-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA07);
+    }
+  }
+
+  .icon-alert-triangle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA08);
+    }
+  }
+
+  .icon-alert {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA09);
+    }
+  }
+
+  .icon-angle-down {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA0A);
+    }
+  }
+
+  .icon-angle-left {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA0B);
+    }
+  }
+
+  .icon-angle-right {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA0C);
+    }
+  }
+
+  .icon-angle-up {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA0D);
+    }
+  }
+
+  .icon-apps-alt {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA0E);
+    }
+  }
+
+  .icon-apps {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA0F);
+    }
+  }
+
+  .icon-arrow-down {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA10);
+    }
+  }
+
+  .icon-arrow-left {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA11);
+    }
+  }
+
+  .icon-arrow-right {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA12);
+    }
+  }
+
+  .icon-arrow-up {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA13);
+    }
+  }
+
+  .icon-arrows-horizontal {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA14);
+    }
+  }
+
+  .icon-arrows-vertical {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA15);
+    }
+  }
+
+  .icon-babies {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA16);
+    }
+  }
+
+  .icon-baggage {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA17);
+    }
+  }
+
+  .icon-bank {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA18);
+    }
+  }
+
+  .icon-beauty {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA19);
+    }
+  }
+
+  .icon-bell-strikethrough {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA1A);
+    }
+  }
+
+  .icon-bell {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA1B);
+    }
+  }
+
+  .icon-bike {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA1C);
+    }
+  }
+
+  .icon-bolt {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA1D);
+    }
+  }
+
+  .icon-book {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA1E);
+    }
+  }
+
+  .icon-bookmark {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA1F);
+    }
+  }
+
+  .icon-box {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA20);
+    }
+  }
+
+  .icon-branch {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA21);
+    }
+  }
+
+  .icon-bus {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA22);
+    }
+  }
+
+  .icon-calculator {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA23);
+    }
+  }
+
+  .icon-calendar {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA24);
+    }
+  }
+
+  .icon-camera-strikethrough {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA25);
+    }
+  }
+
+  .icon-camera {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA26);
+    }
+  }
+
+  .icon-car-accesories {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA27);
+    }
+  }
+
+  .icon-car {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA28);
+    }
+  }
+
+  .icon-card-cvv {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA29);
+    }
+  }
+
+  .icon-card-strikethrough {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA2A);
+    }
+  }
+
+  .icon-card {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA2B);
+    }
+  }
+
+  .icon-cards {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA2C);
+    }
+  }
+
+  .icon-cash-in {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA2D);
+    }
+  }
+
+  .icon-cash-out-atm {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA2E);
+    }
+  }
+
+  .icon-cash {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA2F);
+    }
+  }
+
+  .icon-chat {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA30);
+    }
+  }
+
+  .icon-check-circle-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA31);
+    }
+  }
+
+  .icon-check-circle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA32);
+    }
+  }
+
+  .icon-check {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA33);
+    }
+  }
+
+  .icon-circle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA34);
+    }
+  }
+
+  .icon-city {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA35);
+    }
+  }
+
+  .icon-clock {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA36);
+    }
+  }
+
+  .icon-clothes {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA37);
+    }
+  }
+
+  .icon-code {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA38);
+    }
+  }
+
+  .icon-cog {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA39);
+    }
+  }
+
+  .icon-cross-circle-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA3A);
+    }
+  }
+
+  .icon-cross-circle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA3B);
+    }
+  }
+
+  .icon-cross {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA3C);
+    }
+  }
+
+  .icon-current-location {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA3D);
+    }
+  }
+
+  .icon-dashboard-alt {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA3E);
+    }
+  }
+
+  .icon-dashboard {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA3F);
+    }
+  }
+
+  .icon-dog {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA40);
+    }
+  }
+
+  .icon-drinks {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA41);
+    }
+  }
+
+  .icon-edit {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA42);
+    }
+  }
+
+  .icon-electronics {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA43);
+    }
+  }
+
+  .icon-email {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA44);
+    }
+  }
+
+  .icon-export {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA45);
+    }
+  }
+
+  .icon-face-smile {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA46);
+    }
+  }
+
+  .icon-filter-alt-2-strikethrough {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA47);
+    }
+  }
+
+  .icon-filter-alt-2 {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA48);
+    }
+  }
+
+  .icon-filter-alt-strikethrough {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA49);
+    }
+  }
+
+  .icon-filter-alt {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA4A);
+    }
+  }
+
+  .icon-filter {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA4B);
+    }
+  }
+
+  .icon-flight-landing {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA4C);
+    }
+  }
+
+  .icon-flight-taking-off {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA4D);
+    }
+  }
+
+  .icon-flight {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA4E);
+    }
+  }
+
+  .icon-food {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA4F);
+    }
+  }
+
+  .icon-forbidden-circle-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA50);
+    }
+  }
+
+  .icon-forbidden-circle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA51);
+    }
+  }
+
+  .icon-fridge {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA52);
+    }
+  }
+
+  .icon-furniture {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA53);
+    }
+  }
+
+  .icon-gas {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA54);
+    }
+  }
+
+  .icon-gift {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA55);
+    }
+  }
+
+  .icon-hamburguer {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA56);
+    }
+  }
+
+  .icon-heart {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA57);
+    }
+  }
+
+  .icon-help-circle-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA58);
+    }
+  }
+
+  .icon-help {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA59);
+    }
+  }
+
+  .icon-hide-pass {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA5A);
+    }
+  }
+
+  .icon-hotel-alt-2 {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA5B);
+    }
+  }
+
+  .icon-hotel-alt {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA5C);
+    }
+  }
+
+  .icon-hotel-room-alt {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA5D);
+    }
+  }
+
+  .icon-hotel-room {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA5E);
+    }
+  }
+
+  .icon-hotel {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA5F);
+    }
+  }
+
+  .icon-house {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA60);
+    }
+  }
+
+  .icon-info-alt-circle-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA61);
+    }
+  }
+
+  .icon-info-alt-circle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA62);
+    }
+  }
+
+  .icon-info-circle-fill {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA63);
+    }
+  }
+
+  .icon-info-circle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA64);
+    }
+  }
+
+  .icon-insert-first {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA65);
+    }
+  }
+
+  .icon-insert-last {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA66);
+    }
+  }
+
+  .icon-insert-middle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA67);
+    }
+  }
+
+  .icon-insurance {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA68);
+    }
+  }
+
+  .icon-key {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA69);
+    }
+  }
+
+  .icon-laptop {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA6A);
+    }
+  }
+
+  .icon-launch {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA6B);
+    }
+  }
+
+  .icon-location {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA6C);
+    }
+  }
+
+  .icon-log-out {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA6D);
+    }
+  }
+
+  .icon-magazine {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA6E);
+    }
+  }
+
+  .icon-magnifier {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA6F);
+    }
+  }
+
+  .icon-map {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA70);
+    }
+  }
+
+  .icon-medal {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA71);
+    }
+  }
+
+  .icon-medicine-alt {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA72);
+    }
+  }
+
+  .icon-medicine {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA73);
+    }
+  }
+
+  .icon-menu {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA74);
+    }
+  }
+
+  .icon-message-good {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA75);
+    }
+  }
+
+  .icon-message {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA76);
+    }
+  }
+
+  .icon-motorbike {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA77);
+    }
+  }
+
+  .icon-orange-happy {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA78);
+    }
+  }
+
+  .icon-orange-sad {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA79);
+    }
+  }
+
+  .icon-order-first {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA7A);
+    }
+  }
+
+  .icon-other {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA7B);
+    }
+  }
+
+  .icon-overflow {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA7C);
+    }
+  }
+
+  .icon-pets {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA7D);
+    }
+  }
+
+  .icon-phone {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA7E);
+    }
+  }
+
+  .icon-piano {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA7F);
+    }
+  }
+
+  .icon-qr-code-scan {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA80);
+    }
+  }
+
+  .icon-qr-code {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA81);
+    }
+  }
+
+  .icon-refresh {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA82);
+    }
+  }
+
+  .icon-reorder-first {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA83);
+    }
+  }
+
+  .icon-reorder-last {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA84);
+    }
+  }
+
+  .icon-reorder-middle {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA85);
+    }
+  }
+
+  .icon-reply {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA86);
+    }
+  }
+
+  .icon-restaurant {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA87);
+    }
+  }
+
+  .icon-return {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA88);
+    }
+  }
+
+  .icon-save {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA89);
+    }
+  }
+
+  .icon-send {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA8A);
+    }
+  }
+
+  .icon-share {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA8B);
+    }
+  }
+
+  .icon-shield {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA8C);
+    }
+  }
+
+  .icon-shopping-bag {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA8D);
+    }
+  }
+
+  .icon-shopping-cart {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA8E);
+    }
+  }
+
+  .icon-shovel {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA8F);
+    }
+  }
+
+  .icon-show-pass {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA90);
+    }
+  }
+
+  .icon-show-ticket {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA91);
+    }
+  }
+
+  .icon-sports-basket {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA92);
+    }
+  }
+
+  .icon-sports-tennis {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA93);
+    }
+  }
+
+  .icon-store {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA94);
+    }
+  }
+
+  .icon-storm {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA95);
+    }
+  }
+
+  .icon-summary {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA96);
+    }
+  }
+
+  .icon-sun {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA97);
+    }
+  }
+
+  .icon-system {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA98);
+    }
+  }
+
+  .icon-tag {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA99);
+    }
+  }
+
+  .icon-ticket {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA9A);
+    }
+  }
+
+  .icon-tools {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA9B);
+    }
+  }
+
+  .icon-toys {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA9C);
+    }
+  }
+
+  .icon-trash {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA9D);
+    }
+  }
+
+  .icon-truck-naranja {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA9E);
+    }
+  }
+
+  .icon-truck-strikethrough {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EA9F);
+    }
+  }
+
+  .icon-truck {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA0);
+    }
+  }
+
+  .icon-tv {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA1);
+    }
+  }
+
+  .icon-upload {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA2);
+    }
+  }
+
+  .icon-user {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA3);
+    }
+  }
+
+  .icon-videogames {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA4);
+    }
+  }
+
+  .icon-wallet {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA5);
+    }
+  }
+
+  .icon-washing-machine {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA6);
+    }
+  }
+
+  .icon-watch {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA7);
+    }
+  }
+
+  .icon-whatsapp {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA8);
+    }
+  }
+
+  .icon-zoom-in {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAA9);
+    }
+  }
+
+  .icon-zoom-out {
+    display: block;
+    &:before {
+      @extend %icon-base-styles;
+      @include variable-icon-font(EAAA);
+    }
+  }

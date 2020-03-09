@@ -1,0 +1,19 @@
+@import '../../styles/colors';
+
+.container-button {
+    align-items: center;
+    background-color: $color-brand-400;
+    display: inline-flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: center;
+    max-width: 250px;
+    min-width: 130px;
+    border-radius: 25px;
+    padding: 0 24px;
+    position: relative;
+
+    &__text {
+        color: $color-grayscale-100;
+    }
+}

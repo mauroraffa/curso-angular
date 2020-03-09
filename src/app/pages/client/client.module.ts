@@ -3,10 +3,14 @@ import { ClientComponent } from './client.component';
 import { AdressModule } from 'src/app/features/adress/adress.module';
 import { ClientRoutingModule } from './client.routing';
 import { CommonModule } from '@angular/common';
+import { ComponentsModule } from 'src/app/shared/component/components.module';
 
 
 @NgModule({
-    imports: [CommonModule, AdressModule, ClientRoutingModule],
+    imports: [
+        CommonModule,
+        AdressModule,
+        ClientRoutingModule],
     declarations: [ClientComponent],
     entryComponents: [ClientComponent],
     exports: [ClientComponent]

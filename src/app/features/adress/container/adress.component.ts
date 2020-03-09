@@ -28,4 +28,8 @@ export class AdressComponent implements OnInit, AfterViewInit {
             }
         });
     }
+
+    saveAdress() {
+        console.log('guardando domicilio');
+    }
 }

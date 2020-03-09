@@ -1,2 +1,9 @@
-<label>Nombre calle</label>
-<input type="text">
+<div class="container-adress">
+    <label>Calle</label>
+    <input type="text">
+    <label>Numero</label>
+    <input type="text">
+    <div class="container-adress__button">
+        <app-button [text]="'Guardar'" (clickButton)="saveAdress()"></app-button>
+    </div>
+</div>
