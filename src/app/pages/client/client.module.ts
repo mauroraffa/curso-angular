@@ -10,7 +10,9 @@ import { ComponentsModule } from 'src/app/shared/component/components.module';
     imports: [
         CommonModule,
         AdressModule,
-        ClientRoutingModule],
+        ClientRoutingModule,
+        ComponentsModule
+    ],
     declarations: [ClientComponent],
     entryComponents: [ClientComponent],
     exports: [ClientComponent]
