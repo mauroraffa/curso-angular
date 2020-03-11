@@ -1,4 +1,18 @@
 <div class="container-adress">
+    <div class="row">
+        <div class="col-xs-6">
+            <select>
+                <option value="null">Seleccione...</option>
+                <option *ngFor="let item of states" value="item.id">{{item.nombre}}</option>
+            </select>
+        </div>
+        <div class="col-xs-6">
+            <select>
+                <option value="null">Seleccione...</option>
+                <option *ngFor="let item of states" value="item.id">{{item.nombre}}</option>
+            </select>
+        </div>
+    </div>
     <label>Calle</label>
     <input type="text">
     <label>Numero</label>
