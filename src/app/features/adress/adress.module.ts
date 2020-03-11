@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { AdressComponent } from './container/adress.component';
 import { AdressService } from './services/adress.service';
 import { CommonModule } from '@angular/common';
@@ -13,8 +13,10 @@ import { AdressEffects } from './store/adress.effects';
     imports: [
         CommonModule,
         ComponentsModule,
+        StoreModule.forRoot({}),
         StoreModule.forFeature('adress', fromAdressReducer.reducer),
-        EffectsModule.forFeature([AdressEffects])
+        EffectsModule.forFeature([AdressEffects]),
+        EffectsModule.forRoot([])
     ],
     declarations: [
         AdressComponent
@@ -28,4 +30,9 @@ import { AdressEffects } from './store/adress.effects';
     providers: [AdressService]
 })
 export class AdressModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+          ngModule: AdressModule
+        };
+      }
 }

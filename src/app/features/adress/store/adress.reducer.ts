@@ -20,7 +20,6 @@ export function reducer(state = initialState, action: AdressActions): IAdress {
       return {
         ...state,
         pending: true,
-        data: action.payload,
       };
 
     case AdressActionsTypes.FETCH_FULFILLED:

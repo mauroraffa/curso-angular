@@ -9,7 +9,7 @@ import { ComponentsModule } from 'src/app/shared/component/components.module';
 @NgModule({
     imports: [
         CommonModule,
-        AdressModule,
+        AdressModule.forRoot(),
         ClientRoutingModule,
         ComponentsModule
     ],

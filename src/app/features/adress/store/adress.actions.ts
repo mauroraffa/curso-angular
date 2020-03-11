@@ -9,7 +9,7 @@ export enum AdressActionsTypes {
 
 export class FetchPending implements Action {
   readonly type = AdressActionsTypes.FETCH_PENDING;
-  constructor(public payload: any) { }
+  constructor() { }
 }
 
 export class FetchFulfilled implements Action {

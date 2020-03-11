@@ -7,6 +7,8 @@ import * as fromSelectorAdress from '../store/adress.selectors';
 import { Store, select } from '@ngrx/store';
 import { IAdress } from '../store/adress.reducer';
 import { filter } from 'rxjs/operators';
+import { runInThisContext } from 'vm';
+import { state } from '@angular/animations';
 
 @Component({
     selector: 'app-adress',
@@ -16,6 +18,7 @@ import { filter } from 'rxjs/operators';
 export class AdressComponent implements OnInit, OnDestroy {
 
     states: [] = [];
+    state: number;
 
     loadStatesUnsuscribe: Subscription;
 
@@ -24,21 +27,28 @@ export class AdressComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit() {
+        this.loadState();
+
+        this.getStates();
+    }
+
+    loadState() {
+        this.store.dispatch(
+            new fromActionsAdress.FetchPending(),
+        );
+    }
+
+    getStates() {
         this.loadStatesUnsuscribe = this.store
             .pipe(select(fromSelectorAdress.selectData))
             .pipe(filter(val => !!val))
             .subscribe((data: any) => {
-                console.log(data);
+                this.states = data.provincias;
             });
-        this.loadSelect();
     }
 
-    loadSelect() {
-        // this.loadStatesUnsuscribe = this.domicilioService.loadStates().subscribe((response) => {
-        //     if (response) {
-        //         this.states = response.provincias;
-        //     }
-        // });
+    selectState(event) {
+        this.state = event;
     }
 
     saveAdress() {
