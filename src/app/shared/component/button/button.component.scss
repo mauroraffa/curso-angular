@@ -1,8 +1,9 @@
 @import '../../styles/colors';
 
+// paso 11
 .container-button {
     align-items: center;
-    background-color: $color-brand-400;
+    background-color: $color-brand-500;
     display: inline-flex;
     flex-direction: row;
     height: 40px;
@@ -16,4 +17,8 @@
     &__text {
         color: $color-grayscale-100;
     }
+}
+
+.disabled{
+    background-color: $color-brand-300;
 }

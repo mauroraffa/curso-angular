@@ -1,10 +1,37 @@
-@import '../../../shared/styles/colors';
+@import "../../../shared/styles/colors";
 
-.container-adress {
-    height: 100%;
-    width: 100%;
+// Paso 6
+.container-address {
+  height: 100%;
+  width: 100%;
+  margin-top: 100px;
+
+  select {
+    max-width: 150px;
+  }
+
+  .control-container {
+    margin: 10px;
 
     &__button {
-        height: 50px;
+      margin-top: 25px;
+      height: 50px;
     }
+  }
+
+  .text-danger {
+    color: red;
+    font-size: 15px;
+  }
+
+  .controls {
+    .ng-valid.ng-dirty:not(form) {
+      border: solid 2px $color-success-400;
+    }
+
+    .ng-invalid.ng-dirty:not(form),
+    .ng-invalid:not(form).form-address {
+      border: solid 2px $color-error-400;
+    }
+  }
 }

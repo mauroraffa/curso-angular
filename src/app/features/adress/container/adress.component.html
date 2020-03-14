@@ -1,23 +1,94 @@
-<div class="container-adress">
-    <div class="row">
+<!-- paso 5 -->
+<form [formGroup]="adressForm" class="container-address">
+    <div class="row control-container">
+        <div class="col-xs-4">
+            <label for="streetName">Calle: </label>
+        </div>
         <div class="col-xs-6">
-            <select (change)="selectState($event.target.value)">
-                <option value="null">Seleccione...</option>
+            <div class="controls">
+                <input type="text" id="streetName" placeholder="Calle" class="form-control"
+                    formControlName="streetName">
+            </div>
+            <!-- paso 6 -->
+            <!-- <span class="text-danger"
+            *ngIf="(adressForm.get('streetName').touched || submitted) && adressForm.get('streetName').errors?.required">
+            Calle es requerido
+        </span> -->
+        </div>
+    </div>
+    <div class="row control-container">
+        <div class="col-xs-4">
+            <label for="streetName">Numero: </label>
+        </div>
+        <div class="col-xs-6">
+            <div class="controls">
+                <input type="text" id="streetNumber" placeholder="Numero" class="form-control"
+                    formControlName="streetNumber">
+            </div>
+            <!-- <span class="text-danger"
+            *ngIf="(adressForm.get('streetNumber').touched || submitted) && adressForm.get('streetNumber').errors?.required">
+            Numero es requerido
+        </span> -->
+        </div>
+    </div>
+    <div class="row control-container">
+        <div class="col-xs-4">
+            <label for="streetName">Codigo Postal: </label>
+        </div>
+        <div class="col-xs-6">
+            <div class="controls">
+                <input type="number" id="zipCode" placeholder="CP" class="form-control" formControlName="zipCode">
+            </div>
+        </div>
+    </div>
+    <div class="row control-container">
+        <div class="col-xs-4">
+            <label for="streetName">Piso: </label>
+        </div>
+        <div class="col-xs-6">
+            <div class="controls">
+                <input type="number" id="flow" placeholder="Piso" class="form-control" formControlName="flow">
+            </div>
+        </div>
+    </div>
+    <div class="row control-container">
+        <div class="col-xs-4">
+            <label for="streetName">Depto: </label>
+        </div>
+        <div class="col-xs-6">
+            <div class="controls">
+                <input type="text" id="apartment" placeholder="Depto" class="form-control" formControlName="apartment">
+            </div>
+        </div>
+    </div>
+    <div class="row control-container">
+        <div class="col-xs-4">
+            <label for="streetName">Provincia: </label>
+        </div>
+        <div class="col-xs-6">
+            <select (change)="selectState($event.target.value)" formControlName="stateName">
+                <option value="" disabled selected hidden>Selecciona tu Provincia</option>
                 <option *ngFor="let item of states" [value]="item.id">{{item.nombre}}</option>
             </select>
         </div>
+    </div>
+    <div class="row control-container">
+        <div class="col-xs-4">
+            <label for="streetName">Localidad: </label>
+        </div>
         <div class="col-xs-6">
-            <select (change)="selectDistrict($event.target.value)">
-                <option value="null">Seleccione...</option>
+            <select (change)="selectDistrict($event.target.value)" formControlName="districtName">
+                <option value="" disabled selected hidden>Selecciona tu Localidad</option>
                 <option *ngFor="let item of districs" [value]="item.id">{{item.nombre}}</option>
             </select>
         </div>
     </div>
-    <label>Calle</label>
-    <input type="text">
-    <label>Numero</label>
-    <input type="text">
-    <div class="container-adress__button">
-        <app-button [text]="'Guardar'" (clickButton)="saveAdress()"></app-button>
+    <div class="row control-container">
+        <div class="col-xs-6">
+            <div class="control-container__button">
+                <!-- paso 7 -->
+                <app-button [disabled]="!adressForm.valid" [text]="'Guardar'" (clickButton)="saveAdress()"></app-button>
+            </div>
+        </div>
     </div>
-</div>
+</form>

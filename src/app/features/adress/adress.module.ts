@@ -9,10 +9,15 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AdressEffects } from './store/adress.effects';
 
+// Paso 1
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
     imports: [
         CommonModule,
         ComponentsModule,
+        FormsModule,
+        ReactiveFormsModule,
         StoreModule.forRoot({}),
         StoreModule.forFeature('adress', fromAdressReducer.reducer),
         EffectsModule.forFeature([AdressEffects]),
@@ -32,7 +37,7 @@ import { AdressEffects } from './store/adress.effects';
 export class AdressModule {
     static forRoot(): ModuleWithProviders {
         return {
-          ngModule: AdressModule
+            ngModule: AdressModule
         };
-      }
+    }
 }

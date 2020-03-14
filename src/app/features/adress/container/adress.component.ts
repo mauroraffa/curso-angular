@@ -8,6 +8,7 @@ import { Store, select } from '@ngrx/store';
 import { IAdress } from '../store/adress.reducer';
 import { filter } from 'rxjs/operators';
 import { state } from '@angular/animations';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
     selector: 'app-adress',
@@ -24,7 +25,12 @@ export class AdressComponent implements OnInit, OnDestroy {
     loadStatesUnsuscribe: Subscription;
     loadDistrctUnsuscribe: Subscription;
 
+    // Paso 2
+    adressForm: FormGroup;
+
+    // Paso 3
     constructor(
+        private fb: FormBuilder,
         private store: Store<IAdress>
     ) { }
 
@@ -34,6 +40,20 @@ export class AdressComponent implements OnInit, OnDestroy {
         );
         this.loadState();
         this.getStates();
+        this.buildForm();
+    }
+
+    // Paso 4
+    buildForm() {
+        this.adressForm = this.fb.group({
+            streetName: ['', Validators.required],
+            streetNumber: ['', Validators.required],
+            stateName: [null, Validators.required],
+            districtName: [null, Validators.required],
+            zipCode: ['', Validators.required],
+            flow: [''],
+            apartment: [''],
+        });
     }
 
     loadState() {

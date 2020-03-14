@@ -1,4 +1,5 @@
-<div class="container-button" (click)="clickEventButton($event)">
+<!-- paso 10 -->
+<div class="container-button" (click)="clickEventButton($event)" [class.disabled]="disabled">
     <div class="container-button__text">
         {{text}}
     </div>
