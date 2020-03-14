@@ -17,29 +17,34 @@ import { state } from '@angular/animations';
 export class AdressComponent implements OnInit, OnDestroy {
 
     states: [] = [];
+    districs: [] = [];
     state: number;
+    distric: number;
 
     loadStatesUnsuscribe: Subscription;
+    loadDistrctUnsuscribe: Subscription;
 
     constructor(
         private store: Store<IAdress>
     ) { }
 
     ngOnInit() {
+        this.store.dispatch(
+            new fromActionsAdress.FetchPending(),
+        );
         this.loadState();
-
         this.getStates();
     }
 
     loadState() {
         this.store.dispatch(
-            new fromActionsAdress.FetchPending(),
+            new fromActionsAdress.FetchAddState(),
         );
     }
 
     getStates() {
         this.loadStatesUnsuscribe = this.store
-            .pipe(select(fromSelectorAdress.selectData))
+            .pipe(select(fromSelectorAdress.selectDataState))
             .pipe(filter(val => !!val))
             .subscribe((data: any) => {
                 this.states = data.provincias;
@@ -48,6 +53,23 @@ export class AdressComponent implements OnInit, OnDestroy {
 
     selectState(event) {
         this.state = event;
+        this.store.dispatch(
+            new fromActionsAdress.FetchAddDistrict(this.state),
+        );
+        this.getDistrict();
+    }
+
+    getDistrict() {
+        this.loadDistrctUnsuscribe = this.store
+            .pipe(select(fromSelectorAdress.selectDataDistrict))
+            .pipe(filter(val => !!val))
+            .subscribe((data: any) => {
+                this.districs = data.municipios;
+            });
+    }
+
+    selectDistrict(event) {
+        this.distric = event;
     }
 
     saveAdress() {
@@ -57,6 +79,9 @@ export class AdressComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         if (this.loadStatesUnsuscribe) {
             this.loadStatesUnsuscribe.unsubscribe();
+        }
+        if (this.loadDistrctUnsuscribe) {
+            this.loadDistrctUnsuscribe.unsubscribe();
         }
     }
 }

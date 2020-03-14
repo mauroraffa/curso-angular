@@ -7,9 +7,13 @@ import { Observable } from 'rxjs';
 export class AdressService {
     constructor(
         private http: HttpClient
-    ) {}
+    ) { }
 
     loadStates(): Observable<any> {
         return this.http.get('https://apis.datos.gob.ar/georef/api/provincias');
+    }
+
+    loadDistrict(idSate: number): Observable<any> {
+        return this.http.get(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${idSate}`);
     }
 }

@@ -10,13 +10,23 @@ import { AdressService } from '../services/adress.service';
 export class AdressEffects {
   constructor(private actions$: Actions, private adressService: AdressService) { }
 
-  @Effect() getStates$ = this.actions$.pipe(ofType(AdressActionsTypes.FETCH_PENDING)).pipe(
+  @Effect() getStates$ = this.actions$.pipe(ofType(AdressActionsTypes.FETCH_ADD_STATE)).pipe(
     map((action: any) => action.payload),
     switchMap((payload: any) => {
       return this.adressService.loadStates().pipe(
-        map(response => ({ type: AdressActionsTypes.FETCH_FULFILLED, payload: response })),
+        map(response => ({ type: AdressActionsTypes.FETCH_STATE_FULFILLED, payload: response })),
         catchError((err: HttpErrorResponse) => of({ type: AdressActionsTypes.FETCH_ERROR, payload: err })),
       );
+    }),
+  );
+
+  @Effect() getDistrct$ = this.actions$.pipe(ofType(AdressActionsTypes.FETCH_ADD_DISTRICT)).pipe(
+    map((action: any) => action.payload),
+    switchMap((payload: any) => {
+      return this.adressService.loadDistrict(payload).pipe(
+        map(response => ({ type: AdressActionsTypes.FETCH_DISTRICT_FULFILLED, payload: response })),
+          catchError((err: HttpErrorResponse) => of({ type: AdressActionsTypes.FETCH_ERROR, payload: err })),
+        );
     }),
   );
 }

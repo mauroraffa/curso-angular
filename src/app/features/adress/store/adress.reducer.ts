@@ -2,6 +2,8 @@ import { AdressActions, AdressActionsTypes } from './adress.actions';
 
 export interface IAdress {
   data: any;
+  states: any;
+  distrcts: any;
   pending: boolean;
   error: boolean;
   isFetchCompleted: boolean;
@@ -9,6 +11,8 @@ export interface IAdress {
 
 export const initialState: IAdress = {
   data: null,
+  distrcts: null,
+  states: null,
   pending: null,
   error: null,
   isFetchCompleted: null,
@@ -22,11 +26,34 @@ export function reducer(state = initialState, action: AdressActions): IAdress {
         pending: true,
       };
 
-    case AdressActionsTypes.FETCH_FULFILLED:
+    case AdressActionsTypes.FETCH_ADD_STATE:
+      return {
+        ...state,
+        pending: true,
+        isFetchCompleted: false,
+      };
+
+    case AdressActionsTypes.FETCH_ADD_DISTRICT:
+      return {
+        ...state,
+        pending: true,
+        isFetchCompleted: false,
+      };
+
+    case AdressActionsTypes.FETCH_DISTRICT_FULFILLED:
       return {
         ...state,
         pending: false,
-        data: action.payload,
+        distrcts: action.payload,
+        isFetchCompleted: true,
+      };
+
+
+    case AdressActionsTypes.FETCH_STATE_FULFILLED:
+      return {
+        ...state,
+        pending: false,
+        states: action.payload,
         isFetchCompleted: true,
       };
 
@@ -36,7 +63,8 @@ export function reducer(state = initialState, action: AdressActions): IAdress {
         pending: false,
         isFetchCompleted: false,
         error: true,
-        data: action.payload };
+        data: action.payload
+      };
 
     case AdressActionsTypes.CLEAR_DATA:
       return initialState;

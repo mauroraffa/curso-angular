@@ -7,10 +7,10 @@
             </select>
         </div>
         <div class="col-xs-6">
-            <!-- <select>
+            <select (change)="selectDistrict($event.target.value)">
                 <option value="null">Seleccione...</option>
-                <option *ngFor="let item of states" value="item.id">{{item.nombre}}</option>
-            </select> -->
+                <option *ngFor="let item of districs" [value]="item.id">{{item.nombre}}</option>
+            </select>
         </div>
     </div>
     <label>Calle</label>
