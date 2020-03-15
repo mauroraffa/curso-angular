@@ -33,16 +33,6 @@
     </div>
     <div class="row control-container">
         <div class="col-xs-4">
-            <label for="streetName">Codigo Postal: </label>
-        </div>
-        <div class="col-xs-6">
-            <div class="controls">
-                <input type="number" id="zipCode" placeholder="CP" class="form-control" formControlName="zipCode">
-            </div>
-        </div>
-    </div>
-    <div class="row control-container">
-        <div class="col-xs-4">
             <label for="streetName">Piso: </label>
         </div>
         <div class="col-xs-6">
@@ -81,6 +71,26 @@
                 <option value="" disabled selected hidden>Selecciona tu Localidad</option>
                 <option *ngFor="let item of districs" [value]="item.id">{{item.nombre}}</option>
             </select>
+        </div>
+    </div>
+
+    <!-- paso 12 Mover el codigo postal al ultimo -->
+    <div class="row control-container">
+        <div class="col-xs-4">
+            <label for="streetName">Codigo Postal: </label>
+        </div>
+        <div class="col-xs-6">
+            <div class="controls">
+                <input type="number" id="zipCode" placeholder="CP" class="form-control" formControlName="zipCode">
+            </div>
+            <span class="text-danger"
+                *ngIf="adressForm.get('zipCode').touched && adressForm.get('zipCode').errors?.required">
+                Codigo Postal es requerido
+            </span>
+            <span class="text-danger"
+                *ngIf="adressForm.get('zipCode').touched && adressForm.get('zipCode').errors?.zipCodeNotExists">
+                Codigo Postal invalido
+            </span>
         </div>
     </div>
     <div class="row control-container">

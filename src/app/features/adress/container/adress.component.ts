@@ -1,14 +1,14 @@
 import { Component, OnInit, AfterViewInit, AfterContentInit, OnDestroy } from '@angular/core';
 import { AdressService } from '../services/adress.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 import * as fromActionsAdress from '../store/adress.actions';
 import * as fromSelectorAdress from '../store/adress.selectors';
 import { Store, select } from '@ngrx/store';
 import { IAdress } from '../store/adress.reducer';
-import { filter } from 'rxjs/operators';
+import { filter, debounceTime, map } from 'rxjs/operators';
 import { state } from '@angular/animations';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, ValidatorFn, AbstractControl, ValidationErrors, AsyncValidatorFn } from '@angular/forms';
 
 @Component({
     selector: 'app-adress',
@@ -31,7 +31,8 @@ export class AdressComponent implements OnInit, OnDestroy {
     // Paso 3
     constructor(
         private fb: FormBuilder,
-        private store: Store<IAdress>
+        private store: Store<IAdress>,
+        private addressService: AdressService,
     ) { }
 
     ngOnInit() {
@@ -50,7 +51,12 @@ export class AdressComponent implements OnInit, OnDestroy {
             streetNumber: ['', Validators.required],
             stateName: [null, Validators.required],
             districtName: [null, Validators.required],
-            zipCode: ['', Validators.required],
+            // paso 13
+            zipCode: [
+                { value: '', disabled: true },
+                Validators.required,
+                this.zipCodeValidator()
+            ],
             flow: [''],
             apartment: [''],
         });
@@ -85,6 +91,8 @@ export class AdressComponent implements OnInit, OnDestroy {
             .pipe(filter(val => !!val))
             .subscribe((data: any) => {
                 this.districs = data.municipios;
+                // paso 14
+                this.adressForm.get('zipCode').enable();
             });
     }
 
@@ -104,4 +112,20 @@ export class AdressComponent implements OnInit, OnDestroy {
             this.loadDistrctUnsuscribe.unsubscribe();
         }
     }
+
+    // paso 15
+    zipCodeValidator(): AsyncValidatorFn {
+        return (control: AbstractControl): Observable<{ [key: string]: any } | null> => {
+            return this.addressService.searchZipCode(control.value)
+                .pipe(
+                    map(res => {
+                        console.log(this.adressForm.get('zipCode'));
+                        if (!res.status) {
+                            return { zipCodeNotExists: true };
+                        }
+                    })
+                );
+        };
+    }
+
 }
